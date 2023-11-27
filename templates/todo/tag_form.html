@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+{% block title %}
+  {{ object|yesno:"Update,Create" }} tag
+{% endblock %}
+
+{% block content %}
+  <div class="container h-100 content-container">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-12 col-xl-10">
+
+        <div class="card mask-custom" style="background-color: #3abca7">
+          <div class="card-body p-4 text-white">
+            <div class="text-center pt-5">
+              <h1><i class="fas fa-pencil-alt"></i> {{ object|yesno:"Update,Create" }} tag</h1>
+            </div>
+            <form method="post" action="" novalidate class="mt-4">
+              {% csrf_token %}
+              {{ form|crispy }}
+
+              <input class="btn btn-primary" type="submit" value="{{ object|yesno:'Update,Create' }}">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
