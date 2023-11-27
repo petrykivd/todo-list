@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/08c39d486e.js" crossorigin="anonymous"></script>
+
   <title>
     {% block title %}
 
@@ -17,6 +18,18 @@
   </title>
 </head>
 <body style="background-color: #f8f9fa">
+<style>
+  .sidebar-container {
+    position: relative;
+  }
+
+  .content-container {
+    position: absolute;
+    top: 0;
+    left: 300px; /* Ширина сайдбару + бажана відстань між сайдбаром і контентом */
+    width: calc(100% - 300px); /* Розмір контенту відступаючи від ширини сайдбару */
+  }
+</style>
 {% include 'includes/sidebar.html' %}
 {% block content %}
 

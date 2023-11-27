@@ -1,3 +1,5 @@
+from django.contrib import messages
+from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views import generic
 
@@ -45,3 +47,15 @@ class TagUpdateView(generic.UpdateView):
 class TagDeleteView(generic.DeleteView):
     model = Tag
     success_url = reverse_lazy("todo:tag-list")
+
+
+def mark_task(request, pk):
+    try:
+        task = Task.objects.get(pk=pk)
+        task.is_done = not task.is_done
+        task.save()
+        messages.success(request, 'Task marked successfully.')
+    except Task.DoesNotExist:
+        messages.error(request, 'Task not found.')
+
+    return redirect('/')
