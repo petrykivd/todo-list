@@ -2,7 +2,7 @@
 
 This is a simple ToDo list application built with Django. It provides basic functionality for managing tasks and tags.
 
-# Task|Hub Home Page Layout
+# ToDo list Home Page Layout
 ![image](https://github.com/petrykivd/todo-list/assets/111526221/2e3cc5a6-9cb9-48bc-b258-9bb398ddad60)
 
 ## Features
