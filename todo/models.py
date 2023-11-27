@@ -1,3 +1,5 @@
+from django.utils import timezone
+
 from django.db import models
 
 
@@ -6,6 +8,9 @@ class Tag(models.Model):
 
     class Meta:
         ordering = ["name"]
+
+    def __str__(self):
+        return self.name
 
 
 class Task(models.Model):
